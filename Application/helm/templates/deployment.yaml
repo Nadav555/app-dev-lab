@@ -19,6 +19,9 @@ spec:
               defaultMode: 420
       containers:
         - resources: {}
+          env:
+            - name: PORT
+              value: {{ .Values.containers.containerPort | quote }}
           readinessProbe:
             httpGet:
               path: /health/readiness # this check the application url path
