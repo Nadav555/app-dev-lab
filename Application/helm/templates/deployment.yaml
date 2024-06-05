@@ -15,14 +15,14 @@ spec:
         app: {{ .Chart.Name }}
     spec:
       volumes:
-        - name: index-html
-          configMap:
-            name: '{{ .Chart.Name }}-html'
-            defaultMode: 420
+          - name: index-html
+            configMap:
+              name: '{{ .Chart.Name }}-html'
+              defaultMode: 420
       containers:
           volumeMounts:
             - name: index-html
-            - mountPath: /tmp/html
+              mountPath: /tmp/html
         - resources: {}
           terminationMessagePath: /dev/termination-log
           name: {{ .Chart.Name }}
