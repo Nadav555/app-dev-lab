@@ -3,7 +3,7 @@ name: workshop-test
 description: A Helm chart for Kubernetes
 type: application
 dependencies:
-  - name: workshop-test
+  - name: app-dev-lab
     repository: oci://ghcr.io/Nadav555/helm/
     version: "1.0.0"
     alias: deploy1
