@@ -10,7 +10,7 @@ spec:
   template:
     metadata:
       annotations:
-        argocd.argoproj.io/sync-wave: {{ .argocd.syncwave.deployment }}
+        argocd.argoproj.io/sync-wave: {{ .Chart.argocd.syncwave.deployment }}
         checksum/config: {{ include (print $.Template.BasePath "/ConfigMap.yaml") . | sha256sum}}
       labels:
         app: {{ .Chart.Name }}
