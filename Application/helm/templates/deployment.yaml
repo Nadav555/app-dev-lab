@@ -34,14 +34,14 @@ spec:
             failureThreshold: {{.Values.probes.readiness.failureThreshold}} # count to decalre failure 
           livenessProbe:
             httpGet:
-              path: {{ .Values,probes.liveness.path }}
+              path: {{ .Values.probes.liveness.path }}
               port: {{ .Values.containers.containerPort }}
               scheme: HTTP
-            initialDelaySeconds: {{ .Values,probes.liveness.initialDelaySeconds }}
-            timeoutSeconds: {{ .Values,probes.liveness.timeoutSeconds }}
-            periodSeconds: {{ .Values,probes.liveness.periodSeconds }}
-            successThreshold: {{ .Values,probes.liveness.successThreshold }}
-            failureThreshold: {{ .Values,probes.liveness.failureThreshold }}
+            initialDelaySeconds: {{ .Values.probes.liveness.initialDelaySeconds }}
+            timeoutSeconds: {{ .Values.probes.liveness.timeoutSeconds }}
+            periodSeconds: {{ .Values.probes.liveness.periodSeconds }}
+            successThreshold: {{ .Values.probes.liveness.successThreshold }}
+            failureThreshold: {{ .Values.probes.liveness.failureThreshold }}
           volumeMounts:
             - name: index-html
               mountPath: /tmp/html
